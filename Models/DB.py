@@ -6,7 +6,7 @@ class DB(object):
 	"""Initialize mysql database """
 	host = "localhost"
 	user = "root"
-	password = ""
+	password = "mysql"
 	db = "lms"
 	table = ""
 
@@ -19,6 +19,7 @@ class DB(object):
 		self.mysql = MySQL(app, cursorclass=DictCursor)
 
 	def cur(self):
+		
 		return self.mysql.get_db().cursor()
 
 	def query(self, q):
